@@ -66,6 +66,22 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
+# Health check endpoint
+@app.get("/")
+async def health_check():
+    """Health check endpoint for Render deployment"""
+    return {
+        "status": "healthy",
+        "message": "Activus Invoice Management System is running",
+        "version": "1.0.0",
+        "environment": os.environ.get("ENVIRONMENT", "development")
+    }
+
+@app.get("/health")
+async def health():
+    """Alternative health check endpoint"""
+    return {"status": "ok"}
+
 # PDF Text Extraction Models
 class POExtractedData(BaseModel):
     po_number: Optional[str] = None

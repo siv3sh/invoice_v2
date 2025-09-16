@@ -1,0 +1,26 @@
+{
+  "name": "activus-invoice-management-system",
+  "version": "1.0.0",
+  "description": "Complete invoicing tool with FastAPI backend and React frontend",
+  "scripts": {
+    "build": "./build.sh",
+    "start": "./start.sh",
+    "deploy": "./deploy.sh",
+    "backend": "cd backend && uvicorn server:app --reload",
+    "frontend": "cd frontend && yarn start",
+    "install": "cd backend && pip install -r requirements.txt && cd ../frontend && yarn install"
+  },
+  "keywords": [
+    "invoicing",
+    "fastapi",
+    "react",
+    "mongodb",
+    "pdf-processing"
+  ],
+  "author": "Activus",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/siv3sh/invoice_v2.git"
+  }
+}
