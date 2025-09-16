@@ -5,10 +5,14 @@
   "scripts": {
     "build": "./build.sh",
     "start": "./start.sh",
+    "dev": "./start.sh",
     "deploy": "./deploy.sh",
     "backend": "cd backend && uvicorn server:app --reload",
-    "frontend": "cd frontend && yarn start",
-    "install": "cd backend && pip install -r requirements.txt && cd ../frontend && yarn install"
+    "frontend": "cd frontend && npm run start",
+    "frontend-yarn": "cd frontend && yarn start",
+    "install": "cd backend && pip install -r requirements.txt && cd ../frontend && npm install --legacy-peer-deps --force",
+    "install-yarn": "cd backend && pip install -r requirements.txt && cd ../frontend && yarn install",
+    "concurrent": "concurrently \"npm run backend\" \"npm run frontend\""
   },
   "keywords": [
     "invoicing",
@@ -19,6 +23,9 @@
   ],
   "author": "Activus",
   "license": "MIT",
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/siv3sh/invoice_v2.git"

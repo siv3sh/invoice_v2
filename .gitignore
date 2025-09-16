@@ -77,4 +77,16 @@ agenthub/agents/youtube/db
 .cache/
 
 # Mobile development
-android-sdk/ 
+android-sdk/
+
+# Test files and temporary files
+*_test.py
+test_*.py
+debug_*.py
+*_test.*
+test_result.*
+test-api.*
+
+# Temporary scripts
+dev.sh
+start-backend.sh 
